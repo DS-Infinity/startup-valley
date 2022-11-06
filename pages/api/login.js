@@ -2,8 +2,9 @@
 import { getSession } from 'next-auth/react';
 import User from '../../models/User';
 import mongoose from 'mongoose';
+import connect from '../../utils/connectDB';
 
-export default async (req, res) => {
+const login = async (req, res) => {
   const session = await getSession({ req });
   if (session !== null) {
     const doesUserExist = await User.findOne({ email: session.user.email });
@@ -27,3 +28,5 @@ export default async (req, res) => {
     }
   }
 };
+
+export default connect(login);
