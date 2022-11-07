@@ -24,7 +24,7 @@
   min-width: 35vw;
   position: fixed;
   top: 50vh;
-  left: calc(50vw + calc(var(--sidebar-width) / 2));
+  left: 50vw;
   transform: translate(-50%, -50%) scale(0);
   background-color: var(--background);
   border: 8px solid var(--box-border);

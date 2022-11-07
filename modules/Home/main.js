@@ -4,6 +4,7 @@ import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import { useRouter } from 'next/router';
 import { Popup, useOnClickOutside } from '../../components/Popup';
 import { useRef, useState } from 'react';
+import RegisterNoPopup from './RegisterPopup';
 
 const dialogues = [
   'once upon a time...',
@@ -50,11 +51,15 @@ const Buttons = () => {
       >
         no
       </PrimaryButton>
+      <Popup  ref={ref} popupState={open} crossHandler={() => {setOpen(false)}}>
+        <RegisterNoPopup/>
+      </Popup>
     </div>
   );
 };
 
 const Main = () => {
+  const popupRef = useRef(null)
   return (
     <div className={styles.main}>
       {dialogues.map((d, i) => {
@@ -110,6 +115,7 @@ const Main = () => {
           </Plx>
         );
       })}
+  
     </div>
   );
 };
