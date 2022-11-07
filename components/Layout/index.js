@@ -3,9 +3,9 @@ import styles from './index.module.scss';
 import { useRouter } from 'next/router';
 import Nav from '../../components/Nav';
 
-export default function Layout({ children, page }) {
+export default function Layout({ children, page, landing }) {
   const router = useRouter();
-
+  console.log(landing)
   return (
     <>
       <Head>
@@ -22,7 +22,7 @@ export default function Layout({ children, page }) {
         <div className={styles.main}>
           <div id="popupContainer" />
           <Nav />
-          <div className={styles.main__content}>{children}</div>
+          <div className={!landing ? styles.main__content : styles.main__contentlanding}>{children}</div>
         </div>
       </>
     </>

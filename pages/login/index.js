@@ -7,7 +7,7 @@ export default function Login() {
   const { data: session } = useSession();
   return (
     <ProtectedRoute inverse>
-      <Layout page={{ title: 'Login' }}>
+      <Layout page={{ title: 'Login' }} landing={false}>
         <LoginModule />
       </Layout>
     </ProtectedRoute>

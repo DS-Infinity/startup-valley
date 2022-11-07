@@ -11,7 +11,15 @@
   // background-attachment: fixed;
 
   &__content {
-    padding: 140px 300px;
+    
     display: flex;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__contentlanding {
+
+    display: flex;
+    width: 60%;
   }
 }

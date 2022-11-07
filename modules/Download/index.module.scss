@@ -1,0 +1,40 @@
+.main {
+    width: 100%;
+    margin-top: 100px;
+    &__title {
+        font-size: 46px;
+        text-align: center;
+        color: var(--text-primary); 
+        font-weight: 400;
+        margin-top: 80px;
+    }
+    &__subtitle {
+        font-size: 30px;
+        text-align: center;
+        color: var(--text-primary); 
+        font-weight: 400;
+    }
+    &__downloads {
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+        margin-top: 100px;
+        gap: 28px;
+        &__download {
+            width: 180px;
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            background-color: var(--box-background);
+            border: 4px solid var(--box-border);
+            height: 185px;
+            &__name {
+                color: var(--text-primary);
+                font-size: 20px;
+                margin-bottom: 14px;
+                margin-top: auto;
+            }
+        }
+    }
+}
