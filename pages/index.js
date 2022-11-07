@@ -24,7 +24,7 @@ export default function Home() {
 
             <h2>expires at: {session.expires}</h2>
 
-            <PrimaryButton>Sign Out</PrimaryButton>
+            <PrimaryButton>start recruiting</PrimaryButton>
           </div>
         )}
       </div>

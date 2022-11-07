@@ -1,7 +1,7 @@
 import styles from './index.module.scss';
 
-const PrimaryButton = ({ children, props }) => {
-  return <button className={styles.buttonContainer}>{children}</button>;
+const PrimaryButton = ({ children, style, ...props }) => {
+  return <button className={styles.buttonContainer} style={style}>{children}</button>;
 };
 
 export default PrimaryButton;
