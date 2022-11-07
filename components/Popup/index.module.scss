@@ -20,13 +20,14 @@
 }
 
 .popup {
-  min-height: 40vh;
-  min-width: 30vw;
+  min-height: 45vh;
+  min-width: 35vw;
   position: fixed;
   top: 50vh;
   left: calc(50vw + calc(var(--sidebar-width) / 2));
   transform: translate(-50%, -50%) scale(0);
-  background-color: #f9f9f9;
+  background-color: var(--background);
+  border: 8px solid var(--box-border);
   color: #303030;
   padding: 40px;
   display: flex;
@@ -34,7 +35,7 @@
   //   align-items: center;
   // box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
   z-index: 21474837;
-  border-radius: 10px;
+
   display: flex;
   opacity: 0;
 
@@ -42,6 +43,12 @@
 
   &--no-padding {
     padding: 0;
+  }
+
+  &__cross {
+    position: absolute;
+    right: -38px;
+    top: -37px;
   }
 
   &__heading {
@@ -64,5 +71,44 @@
 @media (max-width: 1050px) {
   .popup {
     left: 50vw;
+  }
+}
+
+.dots {
+  &__dot1 {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: var(--box-border);
+    border-radius: 50%;
+    top: 15px;
+    left: 15px;
+  }
+  &__dot2 {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: var(--box-border);
+    border-radius: 50%;
+    top: 15px;
+    right: 15px;
+  }
+  &__dot3 {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: var(--box-border);
+    border-radius: 50%;
+    bottom: 15px;
+    left: 15px;
+  }
+  &__dot4 {
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: var(--box-border);
+    border-radius: 50%;
+    bottom: 15px;
+    right: 15px;
   }
 }

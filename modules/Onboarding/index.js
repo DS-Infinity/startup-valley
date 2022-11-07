@@ -51,7 +51,7 @@ const LoginModule = () => {
         </div>
       </div>
 
-      <Popup popupState={popupOpen} center>
+      <Popup popupState={popupOpen} noShowCross={true} center>
         Balls
       </Popup>
     </div>
