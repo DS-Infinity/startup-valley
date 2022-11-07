@@ -1,3 +1,12 @@
+import styles from "./index.module.scss";
+import Nav from "./nav";
+import Bottom from "./bottom";
+
 export default function Content() {
-  return 'hi kids i am nishit jha';
+  return (
+    <div className={styles.main}>
+      <Nav />
+      <Bottom />
+    </div>
+  );
 }
