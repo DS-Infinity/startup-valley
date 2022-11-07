@@ -39,7 +39,8 @@ export default function useOnClickOutside(ref, handler) {
 const Popup = React.forwardRef((props, ref) => {
   const {
     children,
-    heading,
+    heading1,
+    heading2,
     popupState,
     className,
     noPadding = false,
@@ -79,7 +80,7 @@ const Popup = React.forwardRef((props, ref) => {
         <rect x="21.0776" y="24.0414" width="4.19178" height="4.19178" transform="rotate(-45 21.0776 24.0414)" fill="#D9D9D9" fill-opacity="0.7"/>
         </svg>)
           }
-        {heading ? <h1 className={styles.popup__heading}>{heading}</h1> : null}
+        {heading1 ? <h1 className={styles.popup__heading}>{heading1}<br/>{heading2}</h1> : null}
         {children}
       </div>
     </ClientOnlyPortal>

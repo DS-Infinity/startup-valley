@@ -1,8 +1,8 @@
 import styles from './index.module.scss';
 
-const PrimaryButton = ({ children, style, ...props }) => {
+const PrimaryButton = ({ children, style, onClick, ...props }) => {
   return (
-    <button className={styles.buttonContainer} style={style} {...props}>
+    <button className={styles.buttonContainer} onClick={onClick} style={style} {...props}>
       {children}
     </button>
   );

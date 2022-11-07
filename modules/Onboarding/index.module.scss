@@ -7,7 +7,12 @@
   align-items: center;
   // background: var(--primary-orange);
 }
-
+.heading {
+  font-size: 36px;
+  margin-top: 16px;
+  color: var(--text-primary);
+  font-weight: 400;
+}
 .box {
   display: flex;
   flex-direction: column;
@@ -69,4 +74,22 @@
 .content {
   margin-bottom: 8vh;
   width: 72%;
+}
+
+
+.genders {
+  display: flex;
+  gap: 16px;
+  &__gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 400ms all ease-in-out;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    background-color: var(--box-background);
+    border: 3px solid var(--box-border);
+  }
 }
