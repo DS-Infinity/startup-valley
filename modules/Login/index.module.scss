@@ -7,3 +7,66 @@
   align-items: center;
   // background: var(--primary-orange);
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 72vh;
+  width: 24vw;
+  background: #2c2c2c;
+  border: 8px solid #ffffff4d;
+  font-family: inherit;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.boxContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 72vh;
+  width: 24vw;
+}
+
+.boxContent h1 {
+  font-size: 40px;
+  margin-top: 56px;
+}
+
+.dots {
+  :first-child {
+    top: 0;
+    left: 0;
+  }
+  :nth-child(2) {
+    top: 0;
+    right: 0;
+  }
+  :nth-child(3) {
+    bottom: 0;
+    left: 0;
+  }
+  :nth-child(4) {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.dots div {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: 16px;
+  border-radius: 50%;
+  background: #ffffff4d;
+}
+
+.content {
+  margin-bottom: 8vh;
+  width: 72%;
+}
