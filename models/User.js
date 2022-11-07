@@ -25,10 +25,20 @@ const userSchema = new mongoose.Schema(
       required: false,
     },
     avatar: {
-      type: String,
+      type: Number,
       required: false,
-      default:
-        'https://media.discordapp.net/attachments/1001775637658353765/1003319839177322639/unknown.png',
+    },
+    slaves: {
+      type: Array,
+      required: true,
+    },
+    companiesBested: {
+      type: Array,
+      required: true,
+    },
+    position: {
+      type: Number,
+      required: true,
     },
   },
   {

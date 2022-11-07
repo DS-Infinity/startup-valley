@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children, inverse = false }) {
       router.push('/login');
     }
     if (session && inverse) {
-      router.push('/');
+      router.push('/home');
     }
   }, [session]);
 

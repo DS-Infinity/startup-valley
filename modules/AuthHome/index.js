@@ -1,20 +1,43 @@
 import { useSession, signIn } from 'next-auth/react';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import Nav from '../../components/Nav';
-import styles from './index.module.scss';
+import PageStyles from '../../styles/pages/index.module.scss';
 import { Popup, useOnClickOutside } from '../../components/Popup';
 import { useState, useEffect, useRef } from 'react';
 import useUser from '../../utils/hooks/useUser';
+
+import ProfileCard from './ProfileCard';
+import TeamCard from './TeamCard';
 
 const Content = () => {
   const { user } = useUser();
 
   if (user) {
     return (
-      <div className={styles.main}>
-        <div className={styles.main__title}>hey {user.username} </div>
+      <div className={PageStyles.main}>
+        <div className={PageStyles.main__section}>
+          <div className={PageStyles.main__section__title}>
+            hey {user.username}{' '}
+          </div>
 
-        <div className={styles.main__subtitle}>hey {user.username} </div>
+          <div className={PageStyles.main__section__subtitle}>
+            ready for world domination?{' '}
+          </div>
+
+          <ProfileCard />
+        </div>
+        <div className={PageStyles.main__section}>
+          <div className={PageStyles.main__section__title}>your team</div>
+
+          <div className={PageStyles.main__section__subtitle}>top brass</div>
+          <TeamCard />
+        </div>
+        <div className={PageStyles.main__section}>
+          <div className={PageStyles.main__section__title}>seed rounds</div>
+
+          <div className={PageStyles.main__section__subtitle}>enrolled</div>
+          <div className={PageStyles.main__section__grid}></div>
+        </div>
       </div>
     );
   }

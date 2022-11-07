@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  margin-top: 135px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      color: white;
+      font-size: 50px;
+    }
+
+    &__subtitle {
+      color: white;
+      font-size: 30px;
+    }
+  }
+}

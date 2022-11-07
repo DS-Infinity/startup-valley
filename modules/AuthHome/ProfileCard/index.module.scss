@@ -1,0 +1,39 @@
+.card {
+  background-color: #202020;
+  border: 5px solid #ffffff27;
+  width: 100%;
+  padding: 25px;
+  margin-top: 12px;
+
+  &__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+
+      &__stat {
+        color: #ffffff;
+        font-size: 26px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 10px;
+
+      &__stat {
+        color: #ffffff;
+        font-size: 26px;
+      }
+    }
+  }
+}

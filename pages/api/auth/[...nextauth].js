@@ -7,6 +7,8 @@ import User from '../../../models/User';
 
 connectToDB();
 
+import { slaves } from '../../../utils/data';
+
 export const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -36,10 +38,15 @@ export const authOptions = {
         return true;
       }
 
+      const length = await User.countDocuments();
+
       const newUser = await User.create({
         providerID: user.user.id,
         email: user.user.email,
         provider: user.account.provider,
+        slaves: slaves.sort(() => 0.5 - Math.random()).slice(0, 5),
+        companiesBested: [],
+        position: length + 1,
       });
 
       newUser.save();
