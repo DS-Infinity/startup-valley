@@ -1,7 +1,7 @@
 .buttonContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 8px 24px;
   background: var(--primary-orange);
@@ -10,4 +10,8 @@
   font-size: 24px;
   color: white;
   cursor: pointer;
+  // transition: all 0.2s ease-in-out;
+  &:hover {
+    scale: 1.02;
+  }
 }
