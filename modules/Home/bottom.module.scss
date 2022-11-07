@@ -11,10 +11,11 @@
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 40px;
+  z-index: 10;
 }
 
 .text {
-    color: #fff;
-    font-size: 28px;
-    cursor: pointer;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
 }

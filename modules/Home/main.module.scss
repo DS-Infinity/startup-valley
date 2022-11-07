@@ -1,0 +1,32 @@
+.main {
+  height: 100%;
+  width: 100%;
+  //   background-color: #f00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  padding-bottom: 230px;
+  background: var(--background);
+}
+
+.text {
+  color: #fff;
+  font-size: 50px;
+  width: 60vw;
+  text-align: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.fixed {
+  position: fixed;
+  //   margin-top: 50%;
+  //   margin-left: 50%;
+}
+
+.buttons {
+  display: flex;
+  gap: 100px;
+}
