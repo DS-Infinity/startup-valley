@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from './index.module.scss';
 import { useRouter } from 'next/router';
+import Nav from '../../components/Nav';
 
 export default function Layout({ children, page }) {
   const router = useRouter();
@@ -19,6 +20,7 @@ export default function Layout({ children, page }) {
       </Head>
       <>
         <div className={styles.main}>
+          <Nav />
           <div className={styles.content}>{children}</div>
         </div>
       </>

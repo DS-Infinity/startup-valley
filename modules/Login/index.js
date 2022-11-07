@@ -1,13 +1,12 @@
 import { useSession, signIn } from 'next-auth/react';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
-import Nav from '../Home/nav';
+import Nav from '../../components/Nav';
 import styles from './index.module.scss';
 
 const LoginModule = () => {
   const { data: session } = useSession();
   return (
     <div className={styles.container}>
-      <Nav />
       <div className={styles.box}>
         <div className={styles.dots}>
           <div />

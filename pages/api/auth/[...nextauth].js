@@ -25,13 +25,16 @@ export const authOptions = {
     async error(error, _, __) {
       console.log(error);
     },
+    async session(session, token, user) {
+      session.id = session.token.sub;
+
+      return session;
+    },
     async signIn(user, account, profile) {
       const doesUserExist = await User.findOne({ email: user.user.email });
       if (doesUserExist) {
-        console.log(user, doesUserExist);
         return true;
       }
-      console.log(user, doesUserExist);
 
       const newUser = await User.create({
         providerID: user.user.id,
