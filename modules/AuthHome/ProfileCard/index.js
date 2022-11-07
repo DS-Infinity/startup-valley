@@ -1,5 +1,7 @@
 import styles from './index.module.scss';
+import useUser from '../../../utils/hooks/useUser';
 export default function ProfileCard() {
+  const { user } = useUser();
   return (
     <div className={styles.card}>
       <div className={styles.card__stats}>
@@ -12,10 +14,10 @@ export default function ProfileCard() {
 
         <div className={styles.card__stats__right}>
           <div className={styles.card__stats__right__stat}>$0</div>
+          <div className={styles.card__stats__right__stat}>{user.position}</div>
           <div className={styles.card__stats__right__stat}>
-            current standing
+            {user.slaves.length}
           </div>
-          <div className={styles.card__stats__right__stat}>total slaves</div>
           <div className={styles.card__stats__right__stat}>
             companies bested
           </div>
