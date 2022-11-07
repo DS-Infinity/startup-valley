@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <Layout page={{ title: '' }}>
-      {user ? <Content /> : <LandingContent />}
+      <Content />
     </Layout>
   );
 }
