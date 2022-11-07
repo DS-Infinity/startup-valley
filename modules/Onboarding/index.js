@@ -2,9 +2,19 @@ import { useSession, signIn } from 'next-auth/react';
 import PrimaryButton from '../../components/Buttons/PrimaryButton';
 import Nav from '../../components/Nav';
 import styles from './index.module.scss';
+import { Popup, useOnClickOutside } from '../../components/Popup';
+import { useState, useEffect, useRef } from 'react';
 
 const LoginModule = () => {
   const { data: session } = useSession();
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPopupOpen(true);
+    }, 1000);
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.box}>
@@ -40,6 +50,10 @@ const LoginModule = () => {
           </div>
         </div>
       </div>
+
+      <Popup popupState={popupOpen} center>
+        Balls
+      </Popup>
     </div>
   );
 };

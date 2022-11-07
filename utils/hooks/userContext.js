@@ -14,7 +14,11 @@ function UserProvider({ children }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.pathname !== '/logout') {
+    if (
+      router.pathname !== '/home' &&
+      router.pathname !== '/logout' &&
+      router.pathname !== '/download'
+    ) {
       if (user && !onboardingComplete) {
         router.push('/login/setup');
       }

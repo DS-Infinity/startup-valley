@@ -1,7 +1,7 @@
 import ProtectedRoute from '../../components/ProtectedRoute';
 import LoginModule from '../../modules/Login';
 import Layout from '../../components/Layout';
-import OnboardingModule from '../../modules/OnboardingModule';
+import OnboardingModule from '../../modules/Onboarding';
 
 export default function Login() {
   return (

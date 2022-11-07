@@ -50,9 +50,6 @@ const Buttons = () => {
       >
         no
       </PrimaryButton>
-      <Popup >
-        cat
-      </Popup>
     </div>
   );
 };

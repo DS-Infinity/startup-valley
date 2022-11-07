@@ -13,7 +13,7 @@ export default function Home() {
   const { user } = useUser();
 
   return (
-    <Layout page={{ title: '' }}>
+    <Layout page={{ title: 'Welcome' }}>
       <Content />
     </Layout>
   );

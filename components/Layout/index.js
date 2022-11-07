@@ -20,6 +20,7 @@ export default function Layout({ children, page }) {
       </Head>
       <>
         <div className={styles.main}>
+          <div id="popupContainer" />
           <Nav />
           <div className={styles.content}>{children}</div>
         </div>
