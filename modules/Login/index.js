@@ -21,7 +21,7 @@ const LoginModule = () => {
             <PrimaryButton
               style={{ width: '100%', background: '#8239AE' }}
               onClick={() => {
-                signIn();
+                signIn('twitch');
               }}
             >
               login with twitch
@@ -33,7 +33,7 @@ const LoginModule = () => {
                 background: '#503BD1',
               }}
               onClick={() => {
-                signIn();
+                signIn('discord');
               }}
             >
               login with discord
