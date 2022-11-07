@@ -5,9 +5,17 @@ export default async function handler(req, res) {
   const session = await getSession({ req });
   if (session) {
     const user = await User.findOne({ providerID: session.token.sub });
-    console.log(user);
-    res.status(200).json({ user });
+
+    let onboardingComplete = false;
+
+    if (user.avatar && user.username) {
+      onboardingComplete = true;
+    } else {
+      onboardingComplete = false;
+    }
+
+    res.status(200).json({ user, onboardingComplete });
   }
 
-  res.status(401).json({ error: 'Not authenticated' });
+  res.status(200).json({ error: 'Not authenticated' });
 }
