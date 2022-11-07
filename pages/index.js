@@ -1,19 +1,17 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import ProtectedRoute from '../components/ProtectedRoute';
-import styles from '../styles/Home.module.scss';
-import { useSession, signOut } from 'next-auth/react';
-import PrimaryButton from '../components/Buttons/PrimaryButton';
-import Layout from '../components/Layout';
-import Content from '../modules/Home';
+import Head from "next/head";
+import Image from "next/image";
+import ProtectedRoute from "../components/ProtectedRoute";
+import styles from "../styles/Home.module.scss";
+import { useSession, signOut } from "next-auth/react";
+import PrimaryButton from "../components/Buttons/PrimaryButton";
+import Layout from "../components/Layout";
+import Content from "../modules/Home";
 
 export default function Home() {
   const { data: session } = useSession();
   return (
-    <ProtectedRoute>
-      <Layout page={{ title: 'Home' }}>
-        <Content />
-      </Layout>
-    </ProtectedRoute>
+    <Layout page={{ title: "" }}>
+      <Content />
+    </Layout>
   );
 }
