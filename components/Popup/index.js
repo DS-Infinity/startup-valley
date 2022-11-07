@@ -43,6 +43,7 @@ const Popup = React.forwardRef((props, ref) => {
     heading2,
     popupState,
     className,
+    crossHandler,
     noPadding = false,
     center = false,
     noShowCross,
@@ -72,7 +73,7 @@ const Popup = React.forwardRef((props, ref) => {
           <div className={styles.dots__dot4}></div>
         </div>
         {noShowCross ? null : (
-        <svg width="32" height="32" viewBox="0 0 49 49" className={styles.popup__cross} fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg onClick={(e) => {crossHandler()}}width="32" height="32" viewBox="0 0 49 49" className={styles.popup__cross} fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="13.5029" y="37.544" width="4.19178" height="14.9041" transform="rotate(-135 13.5029 37.544)" fill="#D9D9D9" fill-opacity="0.7"/>
         <rect x="27.0054" y="24.0414" width="4.19178" height="14.9041" transform="rotate(-135 27.0054 24.0414)" fill="#D9D9D9" fill-opacity="0.7"/>
         <rect x="24.0415" y="27.0053" width="4.19178" height="14.9041" transform="rotate(-45 24.0415 27.0053)" fill="#D9D9D9" fill-opacity="0.7"/>

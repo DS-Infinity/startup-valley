@@ -55,8 +55,8 @@ const LoginModule = () => {
         </div>
       </div>
 
-      <Popup popupState={popupOpen} noShowCross={true} heading1={pageNum === 1 ? `hey...` : 'great...'} heading2={pageNum === 1 ?   `wait what was your name?` : 'now choose your look, wisely'} center>
-        <OnbaordingPopup pageNum={pageNum} setPageNum={setPageNum}>
+      <Popup popupState={popupOpen} noShowCross={pageNum === 1} crossHandler={function ok () {setPageNum(pageNum - 1)}}  heading1={pageNum === 1 ? `hey...` : 'great...'} heading2={pageNum === 1 ?   `wait what was your name?` : 'now choose your look, wisely'} center>
+        <OnbaordingPopup pageNum={pageNum}  setPageNum={setPageNum}>
         </OnbaordingPopup>
       </Popup>
     </div>
