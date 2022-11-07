@@ -1,9 +1,9 @@
-import NextAuth from "next-auth";
-import TwitchProvider from "next-auth/providers/twitch";
-import DiscordProvider from "next-auth/providers/discord";
+import NextAuth from 'next-auth';
+import TwitchProvider from 'next-auth/providers/twitch';
+import DiscordProvider from 'next-auth/providers/discord';
 
-import connectToDB from "../../../utils/connectDB";
-import User from "../../../models/User";
+import connectToDB from '../../../utils/connectDB';
+import User from '../../../models/User';
 
 connectToDB();
 
@@ -29,7 +29,7 @@ export const authOptions = {
       const doesUserExist = await User.findOne({ email: user.user.email });
       if (doesUserExist) {
         console.log(user, doesUserExist);
-        return false;
+        return true;
       }
       console.log(user, doesUserExist);
 

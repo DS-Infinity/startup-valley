@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import ProtectedRoute from '../components/ProtectedRoute';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
 import { useSession, signOut } from 'next-auth/react';
+import PrimaryButton from '../components/Buttons/PrimaryButton';
 
 export default function Home() {
   const { data: session } = useSession();
@@ -23,13 +24,7 @@ export default function Home() {
 
             <h2>expires at: {session.expires}</h2>
 
-            <button
-              onClick={() => {
-                signOut();
-              }}
-            >
-              logout
-            </button>
+            <PrimaryButton>Sign Out</PrimaryButton>
           </div>
         )}
       </div>
