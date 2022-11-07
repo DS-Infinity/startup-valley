@@ -4,11 +4,20 @@ import Nav from '../../components/Nav';
 import styles from './index.module.scss';
 import { Popup, useOnClickOutside } from '../../components/Popup';
 import { useState, useEffect, useRef } from 'react';
+import useUser from '../../utils/hooks/useUser';
 
-const LoginModule = () => {
+const Content = () => {
   const { user } = useUser();
 
-  return <div className={styles.container}></div>;
+  if (user) {
+    return (
+      <div className={styles.main}>
+        <div className={styles.main__title}>hey {user.username} </div>
+
+        <div className={styles.main__subtitle}>hey {user.username} </div>
+      </div>
+    );
+  }
 };
 
-export default LoginModule;
+export default Content;

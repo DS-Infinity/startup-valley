@@ -6,7 +6,7 @@ import Layout from '../../components/Layout';
 export default function Login() {
   const { data: session } = useSession();
   return (
-    <ProtectedRoute>
+    <ProtectedRoute inverse>
       <Layout page={{ title: 'Login' }}>
         <LoginModule />
       </Layout>

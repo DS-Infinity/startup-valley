@@ -9,4 +9,9 @@
   // background-size: cover;
   // background-repeat: repeat-y;
   // background-attachment: fixed;
+
+  &__content {
+    padding: 140px 300px;
+    display: flex;
+  }
 }
