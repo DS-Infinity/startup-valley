@@ -8,7 +8,10 @@ export default async function handler(req, res) {
 
     let onboardingComplete = false;
 
-    if (user.avatar && user.username) {
+    if (
+      (user.avatar == 0 && user.username) ||
+      (user.avatar == 1 && user.username)
+    ) {
       onboardingComplete = true;
     } else {
       onboardingComplete = false;

@@ -1,0 +1,53 @@
+.card {
+  background-color: #202020;
+  border: 5px solid #ffffff27;
+  width: 100%;
+  padding: 25px;
+  margin-top: 12px;
+  display: flex;
+
+  &__stats {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 15px;
+
+      &__stat {
+        color: #ffffff;
+        font-size: 26px;
+      }
+    }
+
+    &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 15px;
+
+      &__stat {
+        color: #ffffff;
+        font-size: 26px;
+      }
+    }
+  }
+
+  &__image {
+    margin-top: -1.5%;
+    width: 15%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-left: 2.5%;
+
+    &__text {
+      color: #ffffff;
+      font-size: 24px;
+    }
+  }
+}
