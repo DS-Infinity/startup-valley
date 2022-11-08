@@ -11,18 +11,39 @@ export default function ProfileCard() {
 
   return (
     <div className={styles.card}>
-      {user.slaves.map((slave, index) => {
-        return (
-          <div className={styles.card__slave} key={index}>
-            <div className={styles.card__slave__avatar}>
-              {slave.avatar == 0 ? <Image src={Women} /> : <Image src={Men} />}
-            </div>
+      {user.slaves.length <= 6
+        ? user.slaves.map((slave, index) => {
+            return (
+              <div className={styles.card__slave} key={index}>
+                <div className={styles.card__slave__avatar}>
+                  {slave.avatar == 0 ? (
+                    <Image src={Women} />
+                  ) : (
+                    <Image src={Men} />
+                  )}
+                </div>
 
-            <div className={styles.card__slave__name}>{slave.name}</div>
-            <div className={styles.card__slave__post}>{slave.post}</div>
-          </div>
-        );
-      })}
+                <div className={styles.card__slave__name}>{slave.name}</div>
+                <div className={styles.card__slave__post}>{slave.post}</div>
+              </div>
+            );
+          })
+        : user.slaves.slice(0, 6).map((slave, index) => {
+            return (
+              <div className={styles.card__slave} key={index}>
+                <div className={styles.card__slave__avatar}>
+                  {slave.avatar == 0 ? (
+                    <Image src={Women} />
+                  ) : (
+                    <Image src={Men} />
+                  )}
+                </div>
+
+                <div className={styles.card__slave__name}>{slave.name}</div>
+                <div className={styles.card__slave__post}>{slave.post}</div>
+              </div>
+            );
+          })}
     </div>
   );
 }

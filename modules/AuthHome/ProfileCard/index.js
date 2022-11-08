@@ -18,7 +18,7 @@ export default function ProfileCard() {
         </div>
 
         <div className={styles.card__stats__right}>
-          <div className={styles.card__stats__right__stat}>$0</div>
+          <div className={styles.card__stats__right__stat}>{user.money}</div>
           <div className={styles.card__stats__right__stat}>
             #{user.position}
           </div>

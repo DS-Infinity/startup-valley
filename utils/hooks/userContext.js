@@ -32,7 +32,7 @@ function UserProvider({ children }) {
   };
 
   return (
-    <Context.Provider value={{ user, setUser, error, loading }}>
+    <Context.Provider value={{ user, setUser, error, loading, fetchUser }}>
       {children}
     </Context.Provider>
   );

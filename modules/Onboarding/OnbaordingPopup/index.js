@@ -4,18 +4,20 @@ import Input from '../../../components/Input';
 import styles from '../index.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import useUser from '../../../utils/hooks/useUser';
 
 const OnbaordingPopup = ({ pageNum, setPageNum }) => {
   const router = useRouter();
   const [userName, setUserName] = useState('');
   const [selectedGender, setGender] = useState('male');
+  const { user, fetchUser } = useUser();
   if (pageNum == 1) {
     return (
       <div style={{ height: '100%' }}>
         <Input
           state={userName}
           setState={setUserName}
-          placeholder='your name'
+          placeholder="your name"
         ></Input>
         <h1 className={styles.heading}>are you sure you're ready?</h1>
 

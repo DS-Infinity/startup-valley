@@ -5,7 +5,6 @@ import Nav from '../../components/Nav';
 
 export default function Layout({ children, page, landing }) {
   const router = useRouter();
-  console.log(landing)
   return (
     <>
       <Head>
@@ -22,7 +21,13 @@ export default function Layout({ children, page, landing }) {
         <div className={styles.main}>
           <div id="popupContainer" />
           <Nav />
-          <div className={!landing ? styles.main__content : styles.main__contentlanding}>{children}</div>
+          <div
+            className={
+              !landing ? styles.main__content : styles.main__contentlanding
+            }
+          >
+            {children}
+          </div>
         </div>
       </>
     </>

@@ -36,6 +36,11 @@ const userSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    money: {
+      type: Number,
+      required: false,
+      default: 3000,
+    },
   },
   {
     timestamps: true,

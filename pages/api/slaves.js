@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react';
 import User from '../../models/User';
-import slaves from '../../utils/data';
+import { slaves } from '../../utils/data';
 
 export default async function handler(req, res) {
   const session = await getSession({ req });
@@ -24,6 +24,7 @@ export default async function handler(req, res) {
         { providerID: session.token.sub },
         {
           slaves: updatedSlaves,
+          money: user.money - slave.price,
         }
       );
 
