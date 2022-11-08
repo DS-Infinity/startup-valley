@@ -4,16 +4,20 @@ import Textarea from "../../../components/Textarea";
 import PrimaryButton from "../../../components/Buttons/PrimaryButton";
 import axios from "../../../utils/axios";
 import useUser from "../../../utils/hooks/useUser";
+import { useRouter } from "next/router";
 
 const ForumPopup = ({setLoading, state}) => {
     const [title, setTitle] = useState("");
+    const router = useRouter()
     const user = useUser();
     const[content, setContent] = useState("");
     async function postStuff () {
         if (title === "" || title.trim() === "" || content === "" || content.trim() === "") {
             return;
         }
-        if (!user) {
+        if (!user.user) {
+            console.log("s")
+            router.push("/login")
             return;
         }
         let data = await axios.post("/api/forum", {authorId: user.user._id, title: title, content: content})
