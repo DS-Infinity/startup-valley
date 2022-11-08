@@ -20,10 +20,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    female: {
-      type: Boolean,
-      required: false,
-    },
     avatar: {
       type: Number,
       required: false,
