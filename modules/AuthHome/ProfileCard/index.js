@@ -1,5 +1,10 @@
 import styles from './index.module.scss';
 import useUser from '../../../utils/hooks/useUser';
+
+import Men from '../../../public/men.png';
+import Women from '../../../public/women.png';
+
+import Image from 'next/image';
 export default function ProfileCard() {
   const { user } = useUser();
   return (
@@ -14,17 +19,26 @@ export default function ProfileCard() {
 
         <div className={styles.card__stats__right}>
           <div className={styles.card__stats__right__stat}>$0</div>
-          <div className={styles.card__stats__right__stat}>{user.position}</div>
           <div className={styles.card__stats__right__stat}>
-            {user.slaves.length}
+            #{user.position}
           </div>
           <div className={styles.card__stats__right__stat}>
-            companies bested
+            {user.slaves.length < 10
+              ? `0${user.slaves.length}`
+              : user.slaves.length}
+          </div>
+          <div className={styles.card__stats__right__stat}>
+            {user.companiesBested.length < 10
+              ? `0${user.companiesBested.length}`
+              : user.companiesBested.length}
           </div>
         </div>
       </div>
 
-      <div className={styles.card__image}></div>
+      <div className={styles.card__image}>
+        {user.avatar == 0 ? <Image src={Women} /> : <Image src={Men} />}
+        <div className={styles.card__image__text}>you</div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,28 @@
+.card {
+  background-color: #202020;
+  border: 5px solid #ffffff27;
+  width: 100%;
+  padding: 25px;
+  display: grid;
+  margin-top: 12px;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+  &__slave {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__name {
+      color: #ffffff;
+      font-size: 26px;
+    }
+
+    &__post {
+      margin-top: 4px;
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
+}

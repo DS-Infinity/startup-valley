@@ -8,7 +8,30 @@
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding-right: 40px;
   z-index: 10;
+
+  &__logo {
+    width: 100px;
+  }
+
+  &__links {
+    display: flex;
+
+    &__link {
+      color: #ffffff;
+      font-size: 24px;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__center {
+    display: flex;
+    gap: 20px;
+  }
 }
