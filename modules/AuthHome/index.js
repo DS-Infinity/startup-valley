@@ -8,6 +8,8 @@ import useUser from '../../utils/hooks/useUser';
 
 import ProfileCard from './ProfileCard';
 import TeamCard from './TeamCard';
+import TournamentCard from './TournamentsCard';
+
 import axios from '../../utils/axios';
 
 const Content = () => {
@@ -16,14 +18,14 @@ const Content = () => {
 
   const getTournaments = async () => {
     const { data } = await axios.get('/api/tournaments');
-    setTournaments(data);
+    setTournaments(data.allTournaments);
   };
 
   useEffect(() => {
     getTournaments();
   }, []);
 
-  if (user) {
+  if (user && tournaments) {
     return (
       <div className={PageStyles.main}>
         <div className={PageStyles.main__section}>
@@ -47,7 +49,20 @@ const Content = () => {
           <div className={PageStyles.main__section__title}>seed rounds</div>
 
           <div className={PageStyles.main__section__subtitle}>enrolled</div>
-          <div className={PageStyles.main__section__grid}></div>
+          <div className={PageStyles.main__section__grid}>
+            {user.tournaments.map((tournament) => {
+              return <TournamentCard tournament={tournament} enrolled={true} />;
+            })}
+          </div>
+
+          <div className={PageStyles.main__section__subtitle}>all</div>
+          <div className={PageStyles.main__section__grid}>
+            {tournaments.map((tournament) => {
+              return (
+                <TournamentCard tournament={tournament} enrolled={false} />
+              );
+            })}
+          </div>
         </div>
       </div>
     );

@@ -39,14 +39,14 @@ export default async function handler(req, res) {
         }
       );
 
-      res.status(200).json({ updatedUser, updatedTournament });
+      return res.status(200).json({ updatedUser, updatedTournament });
     }
     if (req.method === 'GET') {
       const user = await User.findOne({ providerID: session.token.sub });
 
       const allTournaments = await Tournament.find({});
 
-      res.status(200).json({ allTournaments });
+      return res.status(200).json({ allTournaments });
     }
   }
 
