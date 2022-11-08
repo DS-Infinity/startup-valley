@@ -14,7 +14,7 @@ export default async function handler(req, res) {
       onboardingComplete = false;
     }
 
-    res.status(200).json({ user, onboardingComplete });
+    return res.status(200).json({ user, onboardingComplete });
   }
 
   res.status(200).json({ error: 'Not authenticated' });
