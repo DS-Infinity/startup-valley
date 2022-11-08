@@ -5,7 +5,6 @@ import Nav from '../../components/Nav';
 
 export default function Layout({ children, page, landing }) {
   const router = useRouter();
-  console.log(landing)
   return (
     <>
       <Head>

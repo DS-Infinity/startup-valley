@@ -1,0 +1,48 @@
+.main {
+    width: 100%;
+    margin-top: 100px;
+    &__title {
+        font-size: 46px;
+        color: var(--text-primary); 
+        font-weight: 400;
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+    &__subtitle {
+        font-size: 30px;
+        margin-top: 10px;
+        color: var(--text-primary); 
+        font-weight: 400;
+    }
+
+    &__bar {
+        display: flex;
+        gap: 22px;
+        margin-bottom: 20px;
+    }
+
+    &__forum { 
+        margin-bottom: 20px;
+        &__post {
+            background-color: var(--box-background);
+            padding-top: 20px;
+            padding-left: 20px;
+            margin-top: 14px;
+            padding-bottom: 20px;
+            &__heading {
+                color: var(--text-primary);
+                font-weight: 400;
+                font-size: 40px;
+          
+                margin: 0;
+            }
+            &__data {
+                color: #C6C6C6;
+                font-size: 28px;
+                font-weight: 400;
+                margin: 0;
+                margin-top: 6px;
+            }
+        }
+    }
+}
