@@ -108,8 +108,10 @@ const OnbaordingPopup = ({ pageNum, setPageNum }) => {
             });
             const res = await data.json();
             console.log(res);
+
             if (res.success) {
-              router.push('/home');
+              fetchUser();
+              return router.push('/home');
             }
           }}
         >
