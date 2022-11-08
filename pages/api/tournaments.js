@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         res.status(400).json({ error: 'Tournament not found' });
       }
 
-      const updatedTournaments = user.tournaments.concat(tournament._id);
+      const updatedTournaments = user.tournaments.concat(tournament);
       const updatedParticipants = tournament.participants.concat(
         user.providerID
       );
@@ -45,11 +45,8 @@ export default async function handler(req, res) {
       const user = await User.findOne({ providerID: session.token.sub });
 
       const allTournaments = await Tournament.find({});
-      const tournaments = allTournaments.filter((tournament) => {
-        return user.tournaments.includes(tournament.id);
-      });
 
-      res.status(200).json({ tournaments });
+      res.status(200).json({ allTournaments });
     }
   }
 

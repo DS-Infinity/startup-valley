@@ -8,9 +8,20 @@ import useUser from '../../utils/hooks/useUser';
 
 import ProfileCard from './ProfileCard';
 import TeamCard from './TeamCard';
+import axios from '../../utils/axios';
 
 const Content = () => {
   const { user } = useUser();
+  const [tournaments, setTournaments] = useState([]);
+
+  const getTournaments = async () => {
+    const { data } = await axios.get('/api/tournaments');
+    setTournaments(data);
+  };
+
+  useEffect(() => {
+    getTournaments();
+  }, []);
 
   if (user) {
     return (
