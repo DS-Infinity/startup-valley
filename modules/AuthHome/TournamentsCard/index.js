@@ -3,45 +3,91 @@ import useUser from '../../../utils/hooks/useUser';
 
 import Men from '../../../public/men.png';
 import Women from '../../../public/women.png';
+import { useState } from 'react';
 
 import Image from 'next/image';
 import PrimaryButton from '../../../components/Buttons/PrimaryButton';
+import axios from 'axios';
+import { useEffect } from 'react';
 export default function TournamentCard({ tournament, enrolled }) {
-  const { user } = useUser();
-  return (
-    <div className={styles.card}>
-      <div className={styles.card__title}>{tournament.name}</div>
+  const { user, fetchUser } = useUser();
+  const [tournamentData, setTournamentData] = useState(null);
 
-      <div className={styles.card__stats}>
-        <div className={styles.card__stats__stat}>
-          <div className={styles.card__stats__stat__name}>prize amount:</div>
-          <div className={styles.card__stats__stat__value}>
-            ${tournament.prize}
+  const enroll = async () => {
+    const { data } = await axios.post('/api/tournaments', {
+      id: tournament._id,
+    });
+
+    fetchUser();
+  };
+
+  const fetchTour = async () => {
+    const { data } = await axios.get(`/api/tournament/${tournament}`);
+    setTournamentData(data.tournament);
+  };
+
+  useEffect(() => {
+    if (tournament && enrolled) {
+      fetchTour();
+    }
+
+    if (!enrolled) {
+      setTournamentData(tournament);
+    }
+  }, [tournament]);
+
+  if (tournamentData)
+    return (
+      <div className={styles.card}>
+        <div className={styles.card__title}>{tournamentData.name}</div>
+
+        <div className={styles.card__stats}>
+          <div className={styles.card__stats__stat}>
+            <div className={styles.card__stats__stat__name}>prize amount:</div>
+            <div className={styles.card__stats__stat__value}>
+              ${tournamentData.prize}
+            </div>
           </div>
-        </div>
 
-        {enrolled && (
+          {enrolled && (
+            <div className={styles.card__stats__stat}>
+              <div className={styles.card__stats__stat__name}>
+                current position:
+              </div>
+              <div className={styles.card__stats__stat__value}>#1</div>
+            </div>
+          )}
+
           <div className={styles.card__stats__stat}>
             <div className={styles.card__stats__stat__name}>
-              current position:
+              total participants:
             </div>
-            <div className={styles.card__stats__stat__value}>#1</div>
-          </div>
-        )}
-
-        <div className={styles.card__stats__stat}>
-          <div className={styles.card__stats__stat__name}>
-            total participants:
-          </div>
-          <div className={styles.card__stats__stat__value}>
-            {tournament.participants.length}
+            <div className={styles.card__stats__stat__value}>
+              {tournamentData.participants.length}
+            </div>
           </div>
         </div>
+
+        <div className={styles.card__hr} />
+
+        <div className={styles.card__stats__stat}>
+          <div className={styles.card__stats__stat__name}>next battle in:</div>
+          <div className={styles.card__stats__stat__value}>
+            {tournamentData.nextRound}
+          </div>
+        </div>
+
+        {enrolled ? (
+          <PrimaryButton>view leaderboard</PrimaryButton>
+        ) : (
+          <PrimaryButton
+            onClick={() => {
+              enroll();
+            }}
+          >
+            enroll
+          </PrimaryButton>
+        )}
       </div>
-
-      <div className={styles.card__hr} />
-
-      <PrimaryButton >Balls</PrimaryButton>
-    </div>
-  );
+    );
 }

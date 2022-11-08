@@ -12,13 +12,15 @@ export default async function handler(req, res) {
 
       const user = await User.findOne({ providerID: session.token.sub });
 
-      const tournament = await Tournament.findOne({ id: req.body.id });
+      const tournament = await Tournament.findOne({ _id: req.body.id });
 
       if (!tournament) {
         res.status(400).json({ error: 'Tournament not found' });
       }
 
-      const updatedTournaments = user.tournaments.concat(tournament);
+      console.log(user, tournament);
+
+      const updatedTournaments = user.tournaments.concat(tournament._id);
       const updatedParticipants = tournament.participants.concat(
         user.providerID
       );

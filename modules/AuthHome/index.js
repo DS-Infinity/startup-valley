@@ -25,6 +25,11 @@ const Content = () => {
     getTournaments();
   }, []);
 
+  if (!user) return null;
+  const otherTournaments = tournaments.filter(
+    (x) => !user.tournaments.some((y) => y === x._id)
+  );
+
   if (user && tournaments) {
     return (
       <div className={PageStyles.main}>
@@ -55,13 +60,18 @@ const Content = () => {
             })}
           </div>
 
-          <div className={PageStyles.main__section__subtitle}>all</div>
-          <div className={PageStyles.main__section__grid}>
-            {tournaments.map((tournament) => {
-              return (
-                <TournamentCard tournament={tournament} enrolled={false} />
-              );
-            })}
+          <div
+            className={PageStyles.main__section}
+            style={{ marginTop: '20px' }}
+          >
+            <div className={PageStyles.main__section__subtitle}>all</div>
+            <div className={PageStyles.main__section__grid}>
+              {otherTournaments.map((tournament) => {
+                return (
+                  <TournamentCard tournament={tournament} enrolled={false} />
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

@@ -41,6 +41,11 @@ const userSchema = new mongoose.Schema(
       required: false,
       default: 3000,
     },
+    tournaments: {
+      type: Array,
+      required: false,
+      default: [],
+    },
   },
   {
     timestamps: true,
