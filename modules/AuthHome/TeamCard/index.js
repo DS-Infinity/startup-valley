@@ -28,7 +28,7 @@ export default function ProfileCard() {
               </div>
             );
           })
-        : user.slaves.slice(0, 6).map((slave, index) => {
+        : user.slaves.slice(-6).map((slave, index) => {
             return (
               <div className={styles.card__slave} key={index}>
                 <div className={styles.card__slave__avatar}>
