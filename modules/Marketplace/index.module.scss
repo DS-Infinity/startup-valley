@@ -40,7 +40,8 @@
 
 .card {
   height: 240px;
-  width: 48%;
+  max-width: 48%;
+  width: 550px;
   margin-bottom: 32px;
   background: var(--box-background);
   border: 5px solid var(--box-border);
