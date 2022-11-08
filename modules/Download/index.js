@@ -12,19 +12,19 @@ export default function Content() {
       </h2>
       <div className={styles.main__downloads}>
         <div className={styles.main__downloads__download}>
-          <Image src={"/windows.png"} width={"140"} height={"140"}/>
+          <Image src={"/windows.webp"} width={"140"} height={"140"}/>
           <span className={styles.main__downloads__download__name}>Windows</span>
         </div>
         <div className={styles.main__downloads__download}>
-          <Image src={"/apple.png"} width={"125"} height={"125"} style={{marginTop: '8px'}}/>
+          <Image src={"/apple.webp"} width={"125"} height={"125"} style={{marginTop: '8px'}}/>
           <span className={styles.main__downloads__download__name}>MacOS</span>
         </div>
         <div className={styles.main__downloads__download}>
-          <Image src={"/linux.png"} width={"125"} height={"125"} style={{marginTop: '6px'}}/>
+          <Image src={"/linux.webp"} width={"125"} height={"125"} style={{marginTop: '6px'}}/>
           <span className={styles.main__downloads__download__name}>Linux</span>
         </div>
         <div className={styles.main__downloads__download}>
-          <Image src={"/android.png"} width={"100"} height={"120"} style={{marginTop: '8px'}}/>
+          <Image src={"/android.webp"} width={"85"} height={"110"} style={{marginTop: '16px'}}/>
           <span className={styles.main__downloads__download__name}>Android</span>
         </div>
       </div>
