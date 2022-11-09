@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL
-    ? process.env.NEXT_PUBLIC_API_URL
+  baseURL: process.env.NEXTAUTH_URL
+    ? process.env.NEXTAUTH_URL
     : '/',
   withCredentials: true,
 });

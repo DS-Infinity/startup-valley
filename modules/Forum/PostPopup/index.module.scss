@@ -1,0 +1,43 @@
+.popup{
+    display: flex;
+    height: 100%;
+    flex-flow: column;
+    min-height: 27vh;
+}
+
+.body {
+    color: var(--text-primary);
+    font-size: 24px;
+    padding-right: 32px;
+    height: 100%;
+}
+
+.sep {
+    margin-bottom: 0;
+    width: 100%;
+    margin-top: auto;
+    border: 1px solid var(--box-border);
+}
+
+.buttons {
+    display: flex;
+    width: 300px;
+    height: 50px;
+    gap: 10px;
+    button {
+        width: 50%;
+    }
+    margin-left: auto;
+}
+
+.bottom {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+   
+}
+
+.comments {
+    font-size: 22px;
+    color: var(--text-primary);
+}
