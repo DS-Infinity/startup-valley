@@ -54,7 +54,8 @@ export default function TournamentCard({ tournament, enrolled }) {
               <div className={styles.card__stats__stat__name}>
                 current position:
               </div>
-              <div className={styles.card__stats__stat__value}>{tournam}</div>
+              {console.log(tournamentData)}
+              <div className={styles.card__stats__stat__value}>-</div>
             </div>
           )}
 

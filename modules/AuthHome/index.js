@@ -64,7 +64,7 @@ const Content = () => {
             className={PageStyles.main__section}
             style={{ marginTop: '20px' }}
           >
-            <div className={PageStyles.main__section__subtitle}>all</div>
+            {otherTournaments.length !== 0 ? ( <div className={PageStyles.main__section__subtitle}>all</div> ) : null}
             <div className={PageStyles.main__section__grid}>
               {otherTournaments.map((tournament) => {
                 return (
