@@ -4,7 +4,7 @@ export const slaves = [
     faction: 'Engineering',
     avatar: 1,
     stats: {
-      HP: 100,
+      Productivity: 100,
       StackOverflow: 94,
       Figma: 100,
     },
@@ -17,7 +17,7 @@ export const slaves = [
     faction: 'Design',
     avatar: 0,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -31,7 +31,7 @@ export const slaves = [
     faction: 'Design',
     avatar: 1,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -45,9 +45,9 @@ export const slaves = [
     faction: 'Marketing',
     avatar: 1,
     stats: {
-      HP: 70,
+      Productivity: 100,
       Communication: 100,
-      Relationships: 0,
+      Relationships: 2,
     },
     price: 11300,
     id: 3,
@@ -59,7 +59,7 @@ export const slaves = [
     faction: 'Engineering',
     avatar: 1,
     stats: {
-      HP: 100,
+      Productivity: 100,
       StackOverflow: 100,
       Figma: 100,
     },
@@ -72,7 +72,7 @@ export const slaves = [
     faction: 'Engineering',
     avatar: 0,
     stats: {
-      HP: 100,
+      Productivity: 100,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -85,7 +85,7 @@ export const slaves = [
     faction: 'Pitching',
     avatar: 0,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -98,7 +98,7 @@ export const slaves = [
     faction: 'Marketing',
     avatar: 1,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -111,7 +111,7 @@ export const slaves = [
     faction: 'Design',
     avatar: 1,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Figma: 100,
       Cleaning: 100,
     },
@@ -125,7 +125,7 @@ export const slaves = [
     faction: 'ML',
     avatar: 1,
     stats: {
-      HP: 100,
+      Productivity: 100,
       Tensorflow: 100,
       PyTorch: 30,
     },
@@ -139,7 +139,7 @@ export const slaves = [
     faction: 'Design',
     avatar: 0,
     stats: {
-      HP: 45,
+      Productivity: 45,
       Cooking: 100,
       Cleaning: 100,
     },
@@ -153,7 +153,7 @@ export const slaves = [
     faction: 'Marketing',
     avatar: 1,
     stats: {
-      HP: 70,
+      Productivity: 70,
       Communication: 100,
       Relationships: 100,
     },
