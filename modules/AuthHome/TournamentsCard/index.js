@@ -9,9 +9,11 @@ import Image from 'next/image';
 import PrimaryButton from '../../../components/Buttons/PrimaryButton';
 import axios from 'axios';
 import { useEffect } from 'react';
+import LeaderboardPopup from './LeaderboardPopup';
 export default function TournamentCard({ tournament, enrolled }) {
   const { user, fetchUser } = useUser();
   const [tournamentData, setTournamentData] = useState(null);
+  const [showLeaderboard, setShowLeaderboard] = useState(0);
 
   const enroll = async () => {
     const { data } = await axios.post('/api/tournaments', {
@@ -79,7 +81,13 @@ export default function TournamentCard({ tournament, enrolled }) {
         </div>
 
         {enrolled ? (
-          <PrimaryButton>view leaderboard</PrimaryButton>
+          <PrimaryButton
+            onClick={() => {
+              setShowLeaderboard(showLeaderboard + 1);
+            }}
+          >
+            view leaderboard
+          </PrimaryButton>
         ) : (
           <PrimaryButton
             onClick={() => {
@@ -89,6 +97,10 @@ export default function TournamentCard({ tournament, enrolled }) {
             enroll
           </PrimaryButton>
         )}
+        <LeaderboardPopup
+          openState={showLeaderboard}
+          participants={tournamentData.participants.length}
+        />
       </div>
     );
 }

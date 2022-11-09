@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     if (!tournament) {
       return res.status(400).json({ error: 'Tournament not found' });
     }
-
+    console.log(tournament);
     return res.status(200).json({ tournament });
   } else {
     res.status(200).json({ error: 'Not allowed' });

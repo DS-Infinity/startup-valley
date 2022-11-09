@@ -47,11 +47,12 @@ const Popup = React.forwardRef((props, ref) => {
     noPadding = false,
     center = false,
     noShowCross,
+    style,
     ...others
   } = props;
 
   return (
-    <ClientOnlyPortal selector="#popupContainer">
+    <ClientOnlyPortal selector='#popupContainer'>
       <div
         className={cx(styles['popup-overlay'], {
           [styles['popup-overlay--open']]: popupState,
@@ -64,6 +65,7 @@ const Popup = React.forwardRef((props, ref) => {
           [styles['popup--center']]: center,
         })}
         ref={ref}
+        style={props.style ? props.style : {}}
         {...others}
       >
         <div className={styles.dots}>
@@ -73,15 +75,71 @@ const Popup = React.forwardRef((props, ref) => {
           <div className={styles.dots__dot4}></div>
         </div>
         {noShowCross ? null : (
-        <svg onClick={(e) => {crossHandler()}}width="32" height="32" viewBox="0 0 49 49" className={styles.popup__cross} fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="13.5029" y="37.544" width="4.19178" height="14.9041" transform="rotate(-135 13.5029 37.544)" fill="#D9D9D9" fill-opacity="0.7"/>
-        <rect x="27.0054" y="24.0414" width="4.19178" height="14.9041" transform="rotate(-135 27.0054 24.0414)" fill="#D9D9D9" fill-opacity="0.7"/>
-        <rect x="24.0415" y="27.0053" width="4.19178" height="14.9041" transform="rotate(-45 24.0415 27.0053)" fill="#D9D9D9" fill-opacity="0.7"/>
-        <rect x="10.5391" y="13.5027" width="4.19178" height="14.9041" transform="rotate(-45 10.5391 13.5027)" fill="#D9D9D9" fill-opacity="0.7"/>
-        <rect x="21.0776" y="24.0414" width="4.19178" height="4.19178" transform="rotate(-45 21.0776 24.0414)" fill="#D9D9D9" fill-opacity="0.7"/>
-        </svg>)
-          }
-        {heading1 ? <h1 className={styles.popup__heading}>{heading1}<br/>{heading2}</h1> : null}
+          <svg
+            onClick={(e) => {
+              crossHandler();
+            }}
+            width='32'
+            height='32'
+            viewBox='0 0 49 49'
+            className={styles.popup__cross}
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+          >
+            <rect
+              x='13.5029'
+              y='37.544'
+              width='4.19178'
+              height='14.9041'
+              transform='rotate(-135 13.5029 37.544)'
+              fill='#D9D9D9'
+              fill-opacity='0.7'
+            />
+            <rect
+              x='27.0054'
+              y='24.0414'
+              width='4.19178'
+              height='14.9041'
+              transform='rotate(-135 27.0054 24.0414)'
+              fill='#D9D9D9'
+              fill-opacity='0.7'
+            />
+            <rect
+              x='24.0415'
+              y='27.0053'
+              width='4.19178'
+              height='14.9041'
+              transform='rotate(-45 24.0415 27.0053)'
+              fill='#D9D9D9'
+              fill-opacity='0.7'
+            />
+            <rect
+              x='10.5391'
+              y='13.5027'
+              width='4.19178'
+              height='14.9041'
+              transform='rotate(-45 10.5391 13.5027)'
+              fill='#D9D9D9'
+              fill-opacity='0.7'
+            />
+            <rect
+              x='21.0776'
+              y='24.0414'
+              width='4.19178'
+              height='4.19178'
+              transform='rotate(-45 21.0776 24.0414)'
+              fill='#D9D9D9'
+              fill-opacity='0.7'
+            />
+          </svg>
+        )}
+        {heading1 ? (
+          <h1 className={styles.popup__heading}>
+            {heading1}
+            <br />
+            {heading2}
+          </h1>
+        ) : null}
         {children}
       </div>
     </ClientOnlyPortal>
