@@ -12,6 +12,18 @@ import { useEffect } from 'react';
 import LeaderboardPopup from './LeaderboardPopup';
 export default function TournamentCard({ tournament, enrolled }) {
   const { user, fetchUser } = useUser();
+  const [timer, setTimer] = useState('00:00:00');
+  setInterval(() => {
+    const countDownDate = new Date('Nov 10, 2022 15:37:25').getTime();
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(distance / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    setTimer(`${hours}:${minutes}:${seconds}`);
+  }, 1000);
   const [tournamentData, setTournamentData] = useState(null);
   const [showLeaderboard, setShowLeaderboard] = useState(0);
 
@@ -75,9 +87,7 @@ export default function TournamentCard({ tournament, enrolled }) {
 
         <div className={styles.card__stats__stat}>
           <div className={styles.card__stats__stat__name}>next battle in:</div>
-          <div className={styles.card__stats__stat__value}>
-            {tournamentData.nextRound}
-          </div>
+          <div className={styles.card__stats__stat__value}>{timer}</div>
         </div>
 
         {enrolled ? (

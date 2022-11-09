@@ -18,8 +18,6 @@ export default async function handler(req, res) {
         res.status(400).json({ error: 'Tournament not found' });
       }
 
-      console.log(user, tournament);
-
       const updatedTournaments = user.tournaments.concat(tournament._id);
       const updatedParticipants = tournament.participants.concat(
         user.providerID

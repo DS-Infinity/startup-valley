@@ -122,7 +122,19 @@ const PowerupCard = ({
 };
 
 const Content = () => {
+  const [timer, setTimer] = useState('00:00:00');
   const { user } = useUser();
+  setInterval(() => {
+    const countDownDate = new Date('Nov 10, 2022 15:37:25').getTime();
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
+
+    // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(distance / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    setTimer(`${hours}:${minutes}:${seconds}`);
+  }, 1000);
 
   if (!user) return null;
 
@@ -136,7 +148,7 @@ const Content = () => {
         <div className={styles.textshit}>
           <div>recruiting</div>
           <div>the best startup deserves the best team</div>
-          <div>offers expiring in 13:02:24</div>
+          <div>offers expiring in {`${timer}`}</div>
         </div>
         <div className={styles.main__content}>
           {difference.map((slave) => {
